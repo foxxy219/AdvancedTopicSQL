@@ -1,0 +1,43 @@
+﻿<Window x:Class="WPF_LoginForm.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_LoginForm.Views"
+        xmlns:viewModel="clr-namespace:WPF_LoginForm.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindowView" Height="600" Width="900"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="471*"/>
+            <RowDefinition Height="113*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding CurrentUserAccount.DisplayName}"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Margin="580,17,0,0" Height="19"/>
+        <TextBox x:Name="FirstNametxt" HorizontalAlignment="Left" Height="18" Margin="97,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
+        <Label Content="First Name" HorizontalAlignment="Left" Height="26" Margin="23,70,0,0" VerticalAlignment="Top" Width="69"/>
+        <TextBox x:Name="LastNametxt" HorizontalAlignment="Left" Height="18" Margin="97,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
+        <Label Content="Last Name" HorizontalAlignment="Left" Height="28" Margin="23,101,0,0" VerticalAlignment="Top" Width="69"/>
+        <TextBox x:Name="Descriptiontxt" HorizontalAlignment="Left" Height="35" Margin="97,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
+        <Label Content="Description" HorizontalAlignment="Left" Height="35" Margin="23,142,0,0" VerticalAlignment="Top" Width="74"/>
+        <TextBox x:Name="CheckUptxt" HorizontalAlignment="Left" Height="35" Margin="97,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
+        <Label Content="Check Up" HorizontalAlignment="Left" Height="35" Margin="23,199,0,0" VerticalAlignment="Top" Width="69"/>
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Height="200" Margin="372,78,0,0" VerticalAlignment="Top" Width="489" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button x:Name="CreateBtn" Content="Create Appointment" HorizontalAlignment="Left" Height="45" Margin="117,340,0,0" VerticalAlignment="Top" Width="141" Click="CreateBtn_Click"/>
+        <Button x:Name="UpdateBtn" Content="Update Appointment" HorizontalAlignment="Left" Height="45" Margin="289,340,0,0" VerticalAlignment="Top" Width="141" Click="UpdateBtn_Click"/>
+        <Button x:Name="DeleteBtn" Content="Delete Appointment" HorizontalAlignment="Left" Height="45" Margin="494,340,0,0" VerticalAlignment="Top" Width="141" Click="DeleteBtn_Click"/>
+        <Button x:Name="ClearBtn" Content="Clear all" HorizontalAlignment="Left" Height="45" Margin="686,340,0,0" VerticalAlignment="Top" Width="92" Click="ClearBtn_Click"/>
+        <Button Content="Logout" HorizontalAlignment="Left" Height="23" Margin="731,13,0,0" VerticalAlignment="Top" Width="47" Click="Button_Click" />
+        <TextBox x:Name="Pricetxt" HorizontalAlignment="Left" Height="18" Margin="97,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Price" HorizontalAlignment="Left" Height="34" Margin="23,243,0,0" VerticalAlignment="Top" Width="39"/>
+        <TextBox x:Name="Idtxt" HorizontalAlignment="Left" Height="18" Margin="533,399,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+        <Label x:Name="Id" Content="ID" HorizontalAlignment="Left" Height="34" Margin="494,391,0,0" VerticalAlignment="Top" Width="39"/>
+    </Grid>
+</Window>
